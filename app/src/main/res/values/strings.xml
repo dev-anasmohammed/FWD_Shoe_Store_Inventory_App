@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Shoe Store Inventory App</string>
+
+    <!-- Login Fragment-->
+    <string name="enter_your_password">Enter your password</string>
+    <string name="password">Password</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="email_address">Email Address</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account">Don\'t have account? </string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="create_account">Create Account</string>
+
+    <!-- Welcome Fragment-->
+    <string name="next">Next</string>
+    <string name="welcome_back">ًWelcome Back!</string>
+    <string name="let_s_see_awesome_shoes_and_add_new_ones">Let\'s see awesome shoes and add new ones</string>
+
+    <!-- Instruction Fragment-->
+    <string name="useful_instructions">Useful Instructions</string>
+    <string name="you_can_browse_between_shoes_and_add_new_one_using_this_button">You can browse between shoes and add new one using this button</string>
+    <string name="let_s_go">Let\'s Go</string>
+
+    <!-- ShoeDetail Fragment-->
+    <string name="shoe_name">Shoe Name</string>
+    <string name="enter_shoe_name">Enter shoe name</string>
+    <string name="shoe_description">Shoe Description</string>
+    <string name="enter_shoe_description">Enter shoe description</string>
+    <string name="shoe_company">Shoe Company</string>
+    <string name="enter_shoe_company">Enter Shoe Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="cancel">cancel</string>
+    <string name="save">save</string>
+    <string name="_24">24</string>
+    <string name="fill_fields">You have to fill all fields</string>
+
+    <!-- Show Item -->
+    <string name="size">size:</string>
+    <string name="company">company:</string>
+
+    <!-- Menu -->
+    <string name="logout">Logout</string>
+</resources>

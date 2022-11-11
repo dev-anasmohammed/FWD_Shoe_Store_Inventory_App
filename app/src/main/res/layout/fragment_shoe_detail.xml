@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.fragments.ShoeDetailFragment">
+    <!--
+    ConstraintLayout used here because i need it
+    to build more complex design and to constrain view to each other
+    in a way it will work on many devices "Responsive design"
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:text="@string/shoe_name"
+            android:theme="@style/App.Widget.p1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:autofillHints="name"
+            android:background="@drawable/bg_et"
+            android:ems="10"
+            android:hint="@string/enter_shoe_name"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:text="@string/shoe_description"
+            android:theme="@style/App.Widget.p1"
+            app:layout_constraintTop_toBottomOf="@+id/name_et" />
+
+        <EditText
+            android:id="@+id/description_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:autofillHints="name"
+            android:background="@drawable/bg_et"
+            android:ems="10"
+            android:hint="@string/enter_shoe_description"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:text="@string/shoe_company"
+            android:theme="@style/App.Widget.p1"
+            app:layout_constraintTop_toBottomOf="@+id/description_et" />
+
+        <EditText
+            android:id="@+id/company_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:autofillHints="name"
+            android:background="@drawable/bg_et"
+            android:ems="10"
+            android:hint="@string/enter_shoe_company"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:text="@string/shoe_size"
+            android:theme="@style/App.Widget.p1"
+            app:layout_constraintTop_toBottomOf="@+id/company_et" />
+
+        <EditText
+            android:id="@+id/size_et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="@dimen/global_margin"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/global_margin"
+            android:background="@drawable/bg_et"
+            android:ems="10"
+            android:hint="@string/_24"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <!--
+        LinearLayout used here because i need it
+        to put the both two buttons in the group
+        and center it in the middle of the screen
+        Also to provide weight for each one as i want
+        to give save button more 2/3 space
+        -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/global_margin"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/size_et"
+            tools:layout_editor_absoluteX="1dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:backgroundTint="@color/gray"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                android:theme="@style/App.Widget.Button"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="2"
+                android:background="@drawable/bg_button"
+                android:text="@string/save"
+                android:theme="@style/App.Widget.Button"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
