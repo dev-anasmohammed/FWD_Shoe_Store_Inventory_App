@@ -8,6 +8,11 @@
     to build more complex design and to constrain view to each other
     in a way it will work on many devices "Responsive design"
     -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devanasmohammed.shoestoreinventoryapp.presentation.ShoeSharedViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,6 +39,7 @@
             android:autofillHints="name"
             android:background="@drawable/bg_et"
             android:ems="10"
+            android:text="@={viewModel.savedShoe.name}"
             android:hint="@string/enter_shoe_name"
             android:inputType="textPersonName"
             android:maxLines="1"
@@ -61,6 +67,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/global_margin"
             android:autofillHints="name"
+            android:text="@={viewModel.savedShoe.description}"
             android:background="@drawable/bg_et"
             android:ems="10"
             android:hint="@string/enter_shoe_description"
@@ -90,6 +97,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/global_margin"
             android:autofillHints="name"
+            android:text="@={viewModel.savedShoe.company}"
             android:background="@drawable/bg_et"
             android:ems="10"
             android:hint="@string/enter_shoe_company"
@@ -120,6 +128,7 @@
             android:layout_marginEnd="@dimen/global_margin"
             android:background="@drawable/bg_et"
             android:ems="10"
+            android:text="@={viewModel.savedShoe.size}"
             android:hint="@string/_24"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"

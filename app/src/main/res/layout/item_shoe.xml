@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
-
         <variable
             name="shoe"
             type="com.devanasmohammed.shoestoreinventoryapp.data.models.Shoe" />
@@ -91,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:text="@{Double.toString(shoe.size)}"
+            android:text="@{shoe.size}"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"

@@ -1,7 +1,9 @@
 package com.devanasmohammed.shoestoreinventoryapp.presentation.fragments
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -22,31 +24,42 @@ class ShoeDetailFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: ShoeSharedViewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = DataBindingUtil.inflate(
+        _binding = DataBindingUtil.inflate<FragmentShoeDetailBinding?>(
             inflater, R.layout.fragment_shoe_detail, container, false
         )
+
+        viewModel = (activity as MainActivity).viewModel
+
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        //to clear all textFields
+        viewModel.savedShoe = Shoe()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as MainActivity).viewModel
-
         //save a new shoe and add it to the list
         //then hide keyboard if no focus
         //then navigate back
         binding.saveBtn.setOnClickListener {
-            if (isTextFieldValid()) {
-                viewModel.addShoe(getEnteredShoe())
+            if(isTextFieldValid()){
+                viewModel.addShoe(viewModel.savedShoe)
+                Utils().hideKeyboard(requireActivity())
+                findNavController().popBackStack()
             }
-            Utils().hideKeyboard(requireActivity())
-            findNavController().popBackStack()
         }
 
         //cancel adding a new shoe and navigate back
@@ -56,8 +69,10 @@ class ShoeDetailFragment : Fragment() {
         }
     }
 
-
-
+    /**
+     * This method used to check is all textFields is not empty
+     * to add a valid data
+     */
     private fun isTextFieldValid(): Boolean {
         if (binding.nameEt.text.trim().isEmpty() ||
             binding.sizeEt.text.trim().isEmpty() ||
@@ -72,19 +87,6 @@ class ShoeDetailFragment : Fragment() {
             return false
         }
         return true
-    }
-
-
-    /**
-     * This method return the entered shoe by user
-     */
-    private fun getEnteredShoe(): Shoe {
-        return Shoe(
-            binding.nameEt.text.toString(),
-            binding.sizeEt.text.toString().toDouble(),
-            binding.companyEt.text.toString(),
-            binding.descriptionEt.text.toString(),
-        )
     }
 
 }
